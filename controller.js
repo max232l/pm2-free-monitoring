@@ -16,7 +16,8 @@ module.exports.indentify_node_process = cron.schedule('*/10 * * * * *', function
         let influx_input = {};
         influx_input['measurement'] = 'pm2-node';
         influx_input['tags'] = {
-          "host": process.name || null
+          "host" : pm2DataResponse.system_info.hostname,
+          "process": process.name || null
         };
         influx_input['fields'] = {
           "NAME": process.name || null,

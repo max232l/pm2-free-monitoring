@@ -17,7 +17,8 @@ const influxModel = new Influx.InfluxDB({
           PROCESS_ID: Influx.FieldType.INTEGER
         },
         tags: [
-          'host'
+          'host',
+          'process'
         ]
       }
     ]
